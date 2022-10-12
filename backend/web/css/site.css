@@ -5,14 +5,34 @@ body{
 }
 
 
+main{
+    flex:1;
+}
+
+
 aside{
     min-width: 200px;
+    
+}
 
+.nav-link{
+    border-radius: 0;
+    color:#000000;
+}
+
+.site-login{
+     max-width: 30%;
+
+}
+.content-wrapper{
+
+    flex:1
 }
 
 aside .nav-pills .nav-link:hover {
     background:rgba(0,0,0,0.05);
-    
+    border-radius: 0;
+
 }
     
 
@@ -20,6 +40,7 @@ aside .nav-pills .nav-link.active{
     background:rgba(0,0,0,0.05);
     color:#b90000;
     border-left: 1px solid #b90000;
+    border-radius: 0;
     
 }
     

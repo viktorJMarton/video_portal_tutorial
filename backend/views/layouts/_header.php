@@ -10,7 +10,7 @@ use yii\bootstrap5\NavBar;
         'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
+            'class' => ' shadow-sm navbar-expand-lg navbar-light bg-light fixed-top',
         ],
     ]);
 
@@ -19,11 +19,7 @@ use yii\bootstrap5\NavBar;
      
     ];
 
-    if (Yii::$app->user->isGuest){
-        $menuItems = [];
-    }
-
-    echo \yii\helpers\Url::to(['/site/logout']);
+   
 
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav ms-auto'],
@@ -31,7 +27,7 @@ use yii\bootstrap5\NavBar;
     ]);
     if (!(Yii::$app->user->isGuest)) {
         $menuItems = [
-            ['label' => 'Home', 'url' => ['/site/index']],
+            ['label' => 'Create', 'url' => ['/site/index']],
           
          ];
 

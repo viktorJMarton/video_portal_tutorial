@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 
-<div class="site-login">
+<div class="site-login ">
     <div class="mt-7 mh-100 col-lg-10">
         <h1><?= Html::encode($this->title) ?></h1>
 

@@ -1,8 +1,6 @@
-<?php 
 
 
-if (!(Yii::$app->user->isGuest)) {
-?>
+
 
 <aside class='shadow' >
 <?php
@@ -24,7 +22,7 @@ if (!(Yii::$app->user->isGuest)) {
     ]
 
  ]);
-}
+
  ?>
  </aside>
 
