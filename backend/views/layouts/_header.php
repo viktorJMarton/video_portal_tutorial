@@ -13,13 +13,17 @@ use yii\bootstrap5\NavBar;
             'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
         ],
     ]);
+
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
      
     ];
-    if (Yii::$app->user->isGuest){
-        $menuItems = [];}
 
+    if (Yii::$app->user->isGuest){
+        $menuItems = [];
+    }
+
+    echo \yii\helpers\Url::to(['/site/logout']);
 
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav ms-auto'],

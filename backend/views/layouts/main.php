@@ -20,33 +20,7 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
-    <style>html,
-body{
-    height: 100%;
-
-}
-
-aside .nav-pills .nav-link {
-    border-radius: 0;
-    color:#444444;
-
-}
-
-
-aside .nav-pills .nav-link:hover {
-    background:rgba(0,0,0,0.05);
     
-}
-    
-
-aside .nav-pills .nav-link.active{ 
-    background:rgba(0,0,0,0.05);
-    color:#b90000;
-    border-left: 1px solid #b90000;
-    
-}
-    
-    </style>
     
 </head>
 <body class="d-flex flex-column h-100">

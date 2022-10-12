@@ -4,7 +4,13 @@ body{
 
 }
 
+aside{
+    min-width: 200px;
+
+}
+
 aside .nav-pills .nav-link {
+  
     border-radius: 0;
     color:#444444;
 
