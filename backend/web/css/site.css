@@ -4,18 +4,11 @@ body{
 
 }
 
+
 aside{
     min-width: 200px;
 
 }
-
-aside .nav-pills .nav-link {
-  
-    border-radius: 0;
-    color:#444444;
-
-}
-
 
 aside .nav-pills .nav-link:hover {
     background:rgba(0,0,0,0.05);
