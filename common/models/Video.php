@@ -2,7 +2,12 @@
 
 namespace common\models;
 
+use Imagine\Image\Box;
 use Yii;
+use yii\behaviors\BlameableBehavior;
+use yii\behaviors\TimestampBehavior;
+use yii\helpers\FileHelper;
+use yii\imagine\Image;
 
 /**
  * This is the model class for table "{{%video}}".
@@ -20,6 +25,16 @@ use Yii;
  */
 class Video extends \yii\db\ActiveRecord
 {
+
+    /**
+     * @var \yii\web\UploadedFile
+     */
+    public $video;
+
+
+
+
+
     /**
      * {@inheritdoc}
      */
@@ -80,5 +95,31 @@ class Video extends \yii\db\ActiveRecord
     public static function find()
     {
         return new \common\models\query\VideoQuery(get_called_class());
+    }
+
+    public function save($runValidation=true,$attributeNames =null)
+    {
+      $isInsert = $this ->isNewRecord;
+        if($isInsert){
+            $this->video_id = Yii::$app->security->generateRandomString(8);
+            $this->title = $this ->video->name;
+            $this->video_name = $this ->video->name;
+              
+        }
+
+       $saved = parent::save( $runValidation,$attributeNames);
+
+       if(!$saved){
+        return false;
+       }
+       if($isInsert){
+            $videoPath = Yii::getAlias('@frontend/web/storage/videos/' . $this->video_id . '.mp4' );
+            if(!is_dir(dirname($videoPath))){
+                FileHelper::createDirectory(dirname($videoPath));
+            };
+
+            $this->video->saveAs($videoPath);
+       }
+       return true;
     }
 }

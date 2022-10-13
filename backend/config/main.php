@@ -1,3 +1,5 @@
+
+
 <?php
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
@@ -44,8 +46,13 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'video/update/<id>' => 'video/update'
             ],
         ],
+
+        'assetManager'=> [
+            'appendTimestamp'=>true
+        ]
     
     ],
     'params' => $params,
