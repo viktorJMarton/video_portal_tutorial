@@ -7,7 +7,7 @@ jQuery(document).ready(function($){
     
         $('#videoFile').change(ev=>{
                 $(ev.target).closest('form').trigger('submit');
-                console.log("faszarc");
+               
         })
     
     
